@@ -148,16 +148,47 @@ mello:
 
 ## Task 2 : automate the string length
 
-Your task is to make the print call easier by automating the string length calculation instead of passing it down every time. You can search it up or use AI to try to understand the consept.
-Youll first pass down the function in `x1`
+Your task is to make the print call easier by automating the string length calculation instead of passing it down every time. You can search it up or use AI to try to understand the consept. <br>
+The string is supposed to be passed down into register `x1` and the print function will use that to determine the length of the string.
+
+Continue in the label/function you made in the previous task to make it so you only need to pass the string you want to display and call the print function.
 
 <details>
-<summary>Hint (Structure)</summary>
+<summary>Hint 1</summary>
 
 Youll need to create a loop that loops over every character.
 Use `.asciz` since it adds a zero byte at the end of the string.
 Loop through the loop til you hit the zero byte
+</details>
 
+<details>
+<summary>Hint 2 (usefull instructions)</summary>
+
+```asm
+ldrb x3, [x1, x2]
+
+// Loads byte at [x1 + x2]
+// if your counter is x2 it means 
+// youll start at the string and go x2 into the string
+
+// x1 : where the string is
+// x2 : counter (we'll set it to 2)
+
+// "hello\n" : [x1, x2] becomes "l"
+```
+
+```asm
+cbz x3, label
+
+//Compare to zero/ zerobyte.
+// If (x3 == zero):
+//      label()
+```
+
+</details>
+
+<details>
+<summary>Hint 3 (structure)</summary>
 Structure of the loop:
 
 ```asm
@@ -174,19 +205,9 @@ strlen_loop:
 strlen_end
     return to the caller
 ```
-
-Instructions that can help:
-
-```asm
-// Loads byte at [x1 + x2]
-ldrb x3, [x1, x2]
-```
-
-```asm
-cbz x3, label
-```
-
 </details>
+
+
 
 <details>
 <summary>Solution</summary>
@@ -206,3 +227,4 @@ strlen_Loop:
 strlen_done:
     ret
 ```
+</details>

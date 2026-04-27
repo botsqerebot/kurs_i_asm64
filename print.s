@@ -12,10 +12,15 @@ _start:
     
     b exit
 
+
+// The exit label.
+// Quits the program correctly
 exit:
     mov x0, #0
     mov x16, #1
     svc #0x80
 
+
+// Makes space in memory for your string and makes it accessable
 mello:
     .ascii "Hello\n"
