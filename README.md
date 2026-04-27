@@ -35,8 +35,15 @@ An immediate value is a number written directly in the instruction.
 Example: `#1` in `mov x0, #1`.
 
 
-
-# Task
+<h1 style="
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+">
+    Task
+</h1>
 
 ## Tools needed
 
