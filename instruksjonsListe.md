@@ -6,7 +6,7 @@ Moves the last value into the first register.
 
 ```asm
 mov reg1, value
-mov x0, #1 //Stdout
+mov x0, #1 //Stdio
 ```
 
 ## Read address, adr
