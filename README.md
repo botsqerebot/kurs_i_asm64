@@ -8,11 +8,11 @@ A label is a name for a spot in the code.
 It is often used for jumps and branches:
 
 ```asm
-start:
+start:              // The label
 	mov x0, #1
 	b done
 
-done:
+done:               // Another label
 	ret
 ```
 
@@ -27,7 +27,7 @@ An instruction is one CPU command, like `mov`, `add`, `sub`, or `bl`.
 ## Operand
 An operand is the thing an instruction works on.
 
-For example, in `mov x0, #1`, the operands are `x0` and `#1`.
+For example, in `mov x0, #1`, the operands are `x0` and `#1`. The `x0`and `#1` can also be described as parameters.
 
 ## Immediate value
 An immediate value is a number written directly in the instruction.
@@ -45,7 +45,7 @@ Example: `#1` in `mov x0, #1`.
     Tasks
 </h1>
 
-- Click [here](instruksjonsListe.md) to see all instructions you'll need for this crash course pluss more. 
+- Click [here](instruksjonsListe.md) to see all instructions you'll need for this crash course, pluss some more. 
 
 ## Setup / tools needed
 
@@ -122,7 +122,6 @@ To run the code, use the following comand.
 ```
 
 * The `./` runs an executable file where the file at the end is the one thats ran
-* 
 
 
 ## Task 2 : minimal print function
